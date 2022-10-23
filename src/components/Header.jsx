@@ -15,7 +15,7 @@ const Header = (props) => {
     <React.Fragment>
       <div className='super-header'>
         <NavbarBrand className="mr-auto" href="/">
-          <img id='logo' alt="logo" src="assets/images/logo.png" height="60" width="71"></img>
+          <img id='logo' alt="logo" src="assets/images/logo.png" height="60" width="71"/>
         </NavbarBrand>
         <h1 className='brand-name'>BOOKNEST</h1>
       </div>
@@ -37,7 +37,7 @@ const Header = (props) => {
                     <span className='fa fa-address-card fa-lg'></span> <p>Suggestions</p>
                   </NavItem>
                 </Nav>
-                </Collapse>
+              </Collapse>
         </div>
       </Navbar>
     </React.Fragment>
