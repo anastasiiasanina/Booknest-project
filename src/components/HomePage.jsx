@@ -19,8 +19,15 @@ const HomePage = (props) => {
   }, [currImg]);
   
   return (
-    <div className='main'>
-      <img alt="library" src={srcArray[currImg]} height="100%" width="100%"/>
+    <div>
+      <div className='main'>
+        <img alt="library" src={srcArray[currImg]} height="100%" width="100%"/>
+        <div className='welcome'><span>Welcome to the Booknest</span></div>
+        <div className='welcome' id='btn'><span>Get started</span></div>
+      </div>
+      <div className='random-book'>
+
+      </div>
     </div>
   )
 }

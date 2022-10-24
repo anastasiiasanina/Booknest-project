@@ -1,6 +1,31 @@
-.main {
+.main, .random-book {
+  position: relative;
   margin: auto;
   width: 75%;
   height: 600px;
   background-color: #3E2313;
+  text-align: center;
+}
+
+.welcome {
+  position: absolute;
+  bottom: 300px;
+  width: 100%; 
+}
+
+#btn {
+  top: 300px;
+}
+
+#btn span:hover {
+  background-color: #625d3dcd;
+  color: white;
+}
+
+.main span {
+  color: #671004;
+  border: 2px solid #671004;
+  background-color: rgba(240, 248, 255, 0.637);
+  font-size: 5.5vw;
+  font-family: Iceland;
 }
