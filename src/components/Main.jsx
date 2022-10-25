@@ -4,6 +4,7 @@ import BooksList from "./BooksList";
 import Footer from "./Footer";
 import Header from "./Header";
 import HomePage from "./HomePage";
+import Suggestions from "./Suggestions";
 
 const MainComponent = () => {
   return (
@@ -13,6 +14,7 @@ const MainComponent = () => {
         <Route exact path="/home" element={<HomePage/>}/>
         <Route exact path="/books" element={<BooksList/>}/>
         <Route exact path="/authors" element={<AuthorsList/>}/>
+        <Route exact path="/suggestions" element={<Suggestions/>}/>
         <Route path="*" element={<Navigate replace to="/home" />}/>
       </Routes>
       <Footer/>
