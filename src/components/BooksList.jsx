@@ -1,8 +1,12 @@
+import BooksItem from "./BooksItem";
+import '../style/BooksList.css';
 
-const BooksList = (props) => {
+const BooksList = ({books}) => {
   return (
-    <div>
-
+    <div id="list">
+      {books.map((el, index) => 
+        <BooksItem book={el} key={el.id}/>
+      )}
     </div>
   )
 }

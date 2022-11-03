@@ -4,3 +4,9 @@
   height: 75px;
   background-color: #625D3D;
 }
+
+#booknest {
+  position: relative;
+  color: white;
+  padding-top: 10px;
+}

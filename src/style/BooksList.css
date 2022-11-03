@@ -1,0 +1,12 @@
+#list {
+  display: grid;
+  background-color: #3E2313;
+  margin: auto;
+  width: 75%;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.book-content {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

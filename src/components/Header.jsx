@@ -26,22 +26,22 @@ const Header = (props) => {
                 <Nav id='nav' navbar>
                   <NavItem className='text'>
                     <NavLink className="nav-link" to="/home">
-                      <span className='fa fa-lg'></span> <p>Home</p>
+                      <p>Home</p>
                     </NavLink>
                   </NavItem>
                   <NavItem className='text'>
                     <NavLink className="nav-link" to="/books">
-                      <span className='fa fa-lg'></span> <p>Books</p>
+                      <p>Books</p>
                     </NavLink>
                   </NavItem>
                   <NavItem className='text'>
                     <NavLink className="nav-link" to="/authors">
-                      <span className='fa fa-lg'></span> <p>Authors</p>
+                      <p>Authors</p>
                     </NavLink>
                   </NavItem>
                   <NavItem className='text'>
                     <NavLink className="nav-link" to="/suggestions">
-                      <span className='fa fa-lg'></span> <p>Suggestions</p>
+                      <p>Suggestions</p>
                     </NavLink>
                   </NavItem>
                 </Nav>

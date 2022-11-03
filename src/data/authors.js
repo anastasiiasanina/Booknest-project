@@ -1,4 +1,4 @@
-export const BOOKS =
+export const authors =
     [
         {
         id: 0,
