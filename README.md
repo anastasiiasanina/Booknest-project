@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Booknest project
 
 ## Available Scripts
 
