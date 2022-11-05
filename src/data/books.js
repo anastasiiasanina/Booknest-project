@@ -25,7 +25,7 @@ export const books =
           description:''                    
         },
         {
-          id: 0,
+          id: 3,
           name:'Where the crawdads sing',
           author:'Delia Owens',
           image: 'http://cdn.shopify.com/s/files/1/2291/7991/products/where-the-crawdads-sing-delia-owens-28705458454643.jpg?v=1637064543',
@@ -33,7 +33,7 @@ export const books =
           description:''                    
         },
         {
-          id: 1,
+          id: 4,
           name:'Where the crawdads sing',
           author:'Delia Owens',
           image: 'http://cdn.shopify.com/s/files/1/2291/7991/products/where-the-crawdads-sing-delia-owens-28705458454643.jpg?v=1637064543',
@@ -41,7 +41,7 @@ export const books =
           description:''                    
         },
         {
-          id: 2,
+          id: 5,
           name:'Where the crawdads sing',
           author:'Delia Owens',
           image: 'http://cdn.shopify.com/s/files/1/2291/7991/products/where-the-crawdads-sing-delia-owens-28705458454643.jpg?v=1637064543',
@@ -49,7 +49,7 @@ export const books =
           description:''                    
         },
         {
-          id: 0,
+          id: 6,
           name:'Where the crawdads sing',
           author:'Delia Owens',
           image: 'http://cdn.shopify.com/s/files/1/2291/7991/products/where-the-crawdads-sing-delia-owens-28705458454643.jpg?v=1637064543',
@@ -57,7 +57,7 @@ export const books =
           description:''                    
         },
         {
-          id: 1,
+          id: 7,
           name:'Where the crawdads sing',
           author:'Delia Owens',
           image: 'http://cdn.shopify.com/s/files/1/2291/7991/products/where-the-crawdads-sing-delia-owens-28705458454643.jpg?v=1637064543',
@@ -65,7 +65,7 @@ export const books =
           description:''                    
         },
         {
-          id: 2,
+          id: 8,
           name:'Where the crawdads sing',
           author:'Delia Owens',
           image: 'http://cdn.shopify.com/s/files/1/2291/7991/products/where-the-crawdads-sing-delia-owens-28705458454643.jpg?v=1637064543',
@@ -73,7 +73,7 @@ export const books =
           description:''                    
         },
         {
-          id: 0,
+          id: 9,
           name:'Where the crawdads sing',
           author:'Delia Owens',
           image: 'http://cdn.shopify.com/s/files/1/2291/7991/products/where-the-crawdads-sing-delia-owens-28705458454643.jpg?v=1637064543',
@@ -81,7 +81,7 @@ export const books =
           description:''                    
         },
         {
-          id: 1,
+          id: 10,
           name:'Where the crawdads sing',
           author:'Delia Owens',
           image: 'http://cdn.shopify.com/s/files/1/2291/7991/products/where-the-crawdads-sing-delia-owens-28705458454643.jpg?v=1637064543',
@@ -89,7 +89,7 @@ export const books =
           description:''                    
         },
         {
-          id: 2,
+          id: 11,
           name:'Where the crawdads sing',
           author:'Delia Owens',
           image: 'http://cdn.shopify.com/s/files/1/2291/7991/products/where-the-crawdads-sing-delia-owens-28705458454643.jpg?v=1637064543',

@@ -1,10 +1,13 @@
+import { useNavigate } from 'react-router-dom';
 import '../style/BooksList.css';
 
 const BooksItem = ({book, key}) => {
+  const router = useNavigate();
+
   return (
     <div>
       <div className='book-content'>
-        <img src={book.image} alt={book.name} height="300" width="220"/>
+        <img onClick={() => router(`/books/${book.id}`)} src={book.image} alt={book.name} height="320" width="240"/>
       </div>
     </div>
   )
