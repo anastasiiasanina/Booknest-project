@@ -5,7 +5,7 @@ const BooksList = ({books}) => {
   return (
     <div id="list">
       {books.map((el, index) => 
-        <BooksItem book={el} key={el.id}/>
+        <BooksItem book={el} number={index++} key={el.id}/>
       )}
     </div>
   )

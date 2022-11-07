@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import '../style/BooksList.css';
 
-const BooksItem = ({book, key}) => {
+const BooksItem = ({book, number, key}) => {
   const router = useNavigate();
 
   return (
