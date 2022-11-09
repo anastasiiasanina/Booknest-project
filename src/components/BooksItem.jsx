@@ -5,10 +5,8 @@ const BooksItem = ({book, number, key}) => {
   const router = useNavigate();
 
   return (
-    <div>
-      <div className='book-content'>
-        <img onClick={() => router(`/books/${book.id}`)} src={book.image} alt={book.name} height="320" width="240"/>
-      </div>
+    <div className='book-content'>
+      <img onClick={() => router(`/books/${book.id}`)} src={book.image} alt={book.name} height="320" width="240"/>
     </div>
   )
 }

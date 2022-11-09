@@ -7,6 +7,18 @@
 }
 
 .book-content {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+@media (min-width: 0px) and (max-width: 680px) {
+  #list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 681px) and (max-width: 1070px) {
+  #list {
+    grid-template-columns: 1fr 1fr;
+  }
 }
