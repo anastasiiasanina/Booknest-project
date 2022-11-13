@@ -24,9 +24,9 @@ const HomePage = (props) => {
       <div className='main'>
         <img alt="library" src={srcArray[currImg]} height="100%" width="100%"/>
         <div className='welcome'><span>Welcome to the Booknest</span></div>
-        <div className='welcome' id='btn'><span>Get started</span></div>
+        <a href='#random'><div className='welcome' id='btn'><span>Get started</span></div></a>
       </div>
-      <div className='random-book'>
+      <div id='random' className='random-book'>
 
       </div>
     </div>

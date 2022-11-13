@@ -14,7 +14,7 @@ const BooksItem = ({book, number, key}) => {
          <div style={{display: "flex", justifyContent: "center", margin: 50}}><Loader/></div> 
       }
       {loaded &&
-        <img onClick={() => router(`/books/${book.id}`)} src={book.image} alt={book.name} height="330" width="240"/>
+        <img onClick={() => router(`/books/${number}`)} src={book.book_image} alt={book.title} height="330" width="240"/>
       }
       </div>
   )

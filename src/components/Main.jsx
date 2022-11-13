@@ -5,15 +5,16 @@ import Footer from "./Footer";
 import Header from "./Header";
 import HomePage from "./HomePage";
 import Suggestions from "./Suggestions";
-import { books } from "../data/books";
 
 const MainComponent = () => {
+  const apiKey = 'aERWlm0UJQufUiGd3ILBOqkWlqQR41YI';
+
   return (
     <div>
       <Header/>
       <Routes>
         <Route exact path="/home" element={<HomePage/>}/>
-        <Route exact path="/books" element={<BooksList books={books}/>}/>
+        <Route exact path="/books" element={<BooksList apiKey={apiKey}/>}/>
         <Route exact path="/authors" element={<AuthorsList/>}/>
         <Route exact path="/suggestions" element={<Suggestions/>}/>
         <Route path="*" element={<Navigate replace to="/home" />}/>
