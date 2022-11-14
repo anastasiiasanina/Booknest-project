@@ -1,10 +1,10 @@
 import { Navigate, Route, Routes } from "react-router";
-import AuthorsList from "./AuthorsList";
-import BooksList from "./BooksList";
+import AuthorsList from "./pages/AuthorsList";
+import BooksList from "./pages/BooksList";
 import Footer from "./Footer";
 import Header from "./Header";
-import HomePage from "./HomePage";
-import Suggestions from "./Suggestions";
+import HomePage from "./pages/HomePage";
+import Suggestions from "./pages/Suggestions";
 
 const MainComponent = () => {
   const apiKey = 'aERWlm0UJQufUiGd3ILBOqkWlqQR41YI';

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import '../style/HomePage.css';
+import '../../style/HomePage.css';
 
 const HomePage = (props) => {
   let [currImg, setImg] = useState(0);
