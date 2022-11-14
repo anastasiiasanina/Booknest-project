@@ -1,8 +1,11 @@
-#list {
-  display: grid;
+#main-block {
   background-color: #3E2313;
   margin: auto;
   width: 75%;
+}
+
+#list {
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
@@ -11,11 +14,32 @@
   margin-bottom: 15px;
 }
 
-#search {
-  background-color: #3E2313;
-  margin: auto;
-  width: 75%;
-  height: 500px;
+#list-input {
+  width: 30%;
+  height: 50px;
+  border: 3px solid #625D3D;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+#search-btn {
+  height: 50px;
+  border: 3px solid white;
+  background-color: #625D3D;
+  color: white;
+  margin: 10px;
+  border-radius: 10px;
+  font-family: 'Iceland';
+  font-weight: bold;
+  font-size: 1.7vw;
+}
+
+#find-category {
+  display: inline-block;
+  margin: 20px;
+  color: white;
+  font-family: 'Iceland';
+  font-size: 2.5vw;
 }
 
 @media (min-width: 0px) and (max-width: 680px) {
