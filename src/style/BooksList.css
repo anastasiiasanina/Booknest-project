@@ -34,9 +34,9 @@
   font-size: 1.7vw;
 }
 
-#find-category {
+.find-category {
   display: inline-block;
-  margin: 20px;
+  margin: 10px;
   color: white;
   font-family: 'Iceland';
   font-size: 2.5vw;

@@ -16,7 +16,7 @@ const MainComponent = () => {
         <Route exact path="/home" element={<HomePage/>}/>
         <Route exact path="/books" element={<BooksList apiKey={apiKey}/>}/>
         <Route exact path="/authors" element={<AuthorsList/>}/>
-        <Route exact path="/suggestions" element={<Suggestions/>}/>
+        <Route exact path="/suggestions" element={<Suggestions apiKey={apiKey}/>}/>
         <Route path="*" element={<Navigate replace to="/home" />}/>
       </Routes>
       <Footer/>
