@@ -35,6 +35,7 @@ const BooksList = ({apiKey}) => {
         <input id="list-input"  type="text" placeholder="Enter category" onChange={(e) => setList(e.target.value)}/>
         <button id="search-btn" onClick={() => setListEntered(parseInput(list))}>Search</button>
       </div>
+      <h3 className="info">Category: {listEntered}</h3>
       {!loaded &&
         <div style={{display: "flex", justifyContent: "center", margin: 50}}><Loader/></div> 
       }

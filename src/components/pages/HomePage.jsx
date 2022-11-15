@@ -21,10 +21,11 @@ const HomePage = (props) => {
   
   return (
     <div>
-      <div className='main'>
-        <img alt="library" src={srcArray[currImg]} height="100%" width="100%"/>
-        <div className='welcome'><span>Welcome to the Booknest</span></div>
-        <a href='#random'><div className='welcome' id='btn'><span>Get started</span></div></a>
+      <div style={{backgroundImage: `url(${srcArray[currImg]})`, backgroundSize: '100% 100%'}} className='main'>
+        <div className='welcome'>
+          <span>Welcome to the Booknest</span> <br/>
+          <a href='#random'><span>Get started</span></a>
+        </div>
       </div>
       <div id='random' className='random-book'>
 
