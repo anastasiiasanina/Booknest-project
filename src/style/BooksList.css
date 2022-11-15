@@ -19,6 +19,7 @@
   height: 50px;
   border: 3px solid #625D3D;
   margin: 10px;
+  padding: 5px;
   border-radius: 10px;
 }
 
@@ -32,24 +33,4 @@
   font-family: 'Iceland';
   font-weight: bold;
   font-size: 1.7vw;
-}
-
-.find-category {
-  display: inline-block;
-  margin: 10px;
-  color: white;
-  font-family: 'Iceland';
-  font-size: 2.5vw;
-}
-
-@media (min-width: 0px) and (max-width: 680px) {
-  #list {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (min-width: 681px) and (max-width: 1070px) {
-  #list {
-    grid-template-columns: 1fr 1fr;
-  }
 }

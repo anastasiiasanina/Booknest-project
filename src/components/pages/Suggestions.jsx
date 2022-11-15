@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import ListService from "../../API/ListService";
 import '../../style/Suggestions.css';
+import Loader from "../Loader";
 
 const Suggestions = ({apiKey}) => {
-  const[list, setList] = useState([]);
+  const [list, setList] = useState([]);
   const [loaded, setLoaded] = useState(false);
-  //const [stye, setStyle] = useState("65vh");
+  const [height, setHeight] = useState("65vh");
 
   useEffect(() => {
     const fetchList = async () => {
@@ -13,15 +14,23 @@ const Suggestions = ({apiKey}) => {
       const res = await ListService.getList(apiKey);
       setList(res.data.results);
       setLoaded(true);
+      setHeight("");
     }
   
     fetchList();
   }, []);
 
   return (
-    <div className="suggestions">
-      <h3>Here you can know more about categories of New York Times bestsellers</h3>
-      <ul></ul>
+    <div style={{height: height}} className="suggestions">
+      <h3 className="info">Explore categories of New York Times bestsellers</h3>
+      {!loaded &&
+        <div style={{display: "flex", justifyContent: "center", margin: 50}}><Loader/></div> 
+      }
+      <div className="list">
+        {list.map(el => 
+          <p className="list-name">{el.list_name}</p>
+        )}
+      </div>
     </div>
   )
 }

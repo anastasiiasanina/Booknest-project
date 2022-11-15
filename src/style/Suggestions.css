@@ -2,5 +2,14 @@
   background-color: #3E2313;
   margin: auto;
   width: 75%;
-  height: 65vh;
+}
+
+.list-name {
+  color: rgba(255, 255, 255, 0.518);
+  font-family: 'Iceland';
+  font-size: 2vw;
+}
+
+.list-name:hover {
+  color: white;
 }
