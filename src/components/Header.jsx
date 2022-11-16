@@ -4,7 +4,7 @@ import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem } from 'reac
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Header = (props) => {
+const Header = ({setListEntered}) => {
   let [isOpen, setOpen] = useState(false);
 
   const toggleNav = () => {
@@ -29,7 +29,7 @@ const Header = (props) => {
                       <p>Home</p>
                     </NavLink>
                   </NavItem>
-                  <NavItem className='text'>
+                  <NavItem onClick={() => setListEntered('Hardcover fiction')} className='text'>
                     <NavLink className="nav-link" to="/books">
                       <p>Books</p>
                     </NavLink>

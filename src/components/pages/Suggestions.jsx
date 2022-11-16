@@ -3,8 +3,12 @@ import ListService from "../../API/ListService";
 import '../../style/Suggestions.css';
 import Loader from "../Loader";
 import { Fetching } from "../../helpers/fetch";
+import { useNavigate } from "react-router";
+import {Link} from 'react-router-dom';
 
-const Suggestions = ({apiKey}) => {
+const Suggestions = ({apiKey, setListEntered}) => {
+  const router = useNavigate();
+
   const [list, setList] = useState([]);
   const [height, setHeight] = useState("65vh");
 
@@ -27,7 +31,7 @@ const Suggestions = ({apiKey}) => {
       }
       <div className="list">
         {list.map(el => 
-          <p className="list-name">{el.list_name}</p>
+        <Link style={{textDecoration: 'none'}} to='/books'><p onClick={() => setListEntered(el.list_name)} className="list-name">{el.list_name}</p></Link>
         )}
       </div>
     </div>

@@ -5,18 +5,20 @@ import Footer from "./Footer";
 import Header from "./Header";
 import HomePage from "./pages/HomePage";
 import Suggestions from "./pages/Suggestions";
+import { useState } from "react";
 
 const MainComponent = () => {
   const apiKey = 'aERWlm0UJQufUiGd3ILBOqkWlqQR41YI';
+  const [listEntered, setListEntered] = useState('Hardcover fiction');
 
   return (
     <div>
-      <Header/>
+      <Header setListEntered={setListEntered}/>
       <Routes>
         <Route exact path="/home" element={<HomePage/>}/>
-        <Route exact path="/books" element={<BooksList apiKey={apiKey}/>}/>
+        <Route exact path="/books" element={<BooksList apiKey={apiKey} listEntered={listEntered} setListEntered={setListEntered}/>}/>
         <Route exact path="/authors" element={<AuthorsList/>}/>
-        <Route exact path="/suggestions" element={<Suggestions apiKey={apiKey}/>}/>
+        <Route exact path="/suggestions" element={<Suggestions apiKey={apiKey} setListEntered={setListEntered}/>}/>
         <Route path="*" element={<Navigate replace to="/home" />}/>
       </Routes>
       <Footer/>

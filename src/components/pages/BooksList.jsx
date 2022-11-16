@@ -5,10 +5,9 @@ import BookService from "../../API/BookService";
 import Loader from "../Loader";
 import { Fetching } from "../../helpers/fetch";
 
-const BooksList = ({apiKey}) => {
+const BooksList = ({apiKey, listEntered, setListEntered}) => {
   const [books, setBooks] = useState([]);
   const [list, setList] = useState('list');
-  const [listEntered, setListEntered] = useState('Hardcover fiction');
   const [height, setHeight] = useState("65vh");
   const [fetchBooks, loaded, error] = Fetching(async () => {
     const res = await BookService.getBooks(apiKey, parseInput(listEntered));
@@ -30,7 +29,9 @@ const BooksList = ({apiKey}) => {
       <h3 className="info">In section Suggestions you may find the list.</h3>
       <div id="search">
         <input id="list-input"  type="text" placeholder="Enter category" onChange={(e) => setList(e.target.value)}/>
-        <button id="search-btn" onClick={() => setListEntered(list)}>Search</button>
+        <button id="search-btn" onClick={() => {
+          setListEntered(list);
+        }}>Search</button>
       </div>
       {error && <h3 className="info">{error}</h3>}
       {!error && <h3 className="info">Category: {listEntered}</h3>}
