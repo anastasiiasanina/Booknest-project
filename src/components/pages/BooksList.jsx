@@ -3,23 +3,20 @@ import '../../style/BooksList.css';
 import { useState, useEffect } from "react";
 import BookService from "../../API/BookService";
 import Loader from "../Loader";
+import { Fetching } from "../../helpers/fetch";
 
 const BooksList = ({apiKey}) => {
   const [books, setBooks] = useState([]);
-  const [loaded, setLoaded] = useState(false);
   const [list, setList] = useState('list');
-  const [listEntered, setListEntered] = useState('hardcover-fiction');
+  const [listEntered, setListEntered] = useState('Hardcover fiction');
   const [height, setHeight] = useState("65vh");
+  const [fetchBooks, loaded, error] = Fetching(async () => {
+    const res = await BookService.getBooks(apiKey, parseInput(listEntered));
+    setBooks(res.data.results.books);
+    setHeight();
+  }, "No category with this name");
 
   useEffect(() => {
-    const fetchBooks = async () => {
-      setLoaded(false);
-      const res = await BookService.getBooks(apiKey, listEntered);
-      setBooks(res.data.results.books);
-      setLoaded(true);
-      setHeight();
-    }
-  
     fetchBooks();
   }, [listEntered]);
 
@@ -28,14 +25,15 @@ const BooksList = ({apiKey}) => {
   }
 
   return (
-    <div style={{height: height}} id="main-block">
+    <div style={{height: height}} className="main-block">
       <h3 className="info">Find your preferable category.</h3> <br/>
       <h3 className="info">In section Suggestions you may find the list.</h3>
       <div id="search">
         <input id="list-input"  type="text" placeholder="Enter category" onChange={(e) => setList(e.target.value)}/>
-        <button id="search-btn" onClick={() => setListEntered(parseInput(list))}>Search</button>
+        <button id="search-btn" onClick={() => setListEntered(list)}>Search</button>
       </div>
-      <h3 className="info">Category: {listEntered}</h3>
+      {error && <h3 className="info">{error}</h3>}
+      {!error && <h3 className="info">Category: {listEntered}</h3>}
       {!loaded &&
         <div style={{display: "flex", justifyContent: "center", margin: 50}}><Loader/></div> 
       }

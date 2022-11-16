@@ -24,7 +24,7 @@ const HomePage = (props) => {
       <div style={{backgroundImage: `url(${srcArray[currImg]})`, backgroundSize: '100% 100%'}} className='main'>
         <div className='welcome'>
           <span>Welcome to the Booknest</span> <br/>
-          <a href='#random'><span>Get started</span></a>
+          <a id='btn' href='#random'><span>Get started</span></a>
         </div>
       </div>
       <div id='random' className='random-book'>

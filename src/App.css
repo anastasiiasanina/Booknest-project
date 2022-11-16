@@ -2,12 +2,18 @@
   text-align: center;
 }
 
+.main-block {
+  background-color: #3E2313;
+  margin: auto;
+  width: 75%;
+}
+
 .info {
   display: inline-block;
   margin: 10px;
   color: white;
   font-family: 'Iceland';
-  font-size: 2.5vw;
+  font-size: 2rem;
 }
 
 .list {
@@ -19,6 +25,13 @@
 @media (min-width: 0px) and (max-width: 1000px) {
   .list {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 500px) {
+  #book-img {
+    width: 75%;
+    height: 90%;
   }
 }
 

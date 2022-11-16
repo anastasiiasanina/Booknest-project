@@ -6,7 +6,7 @@ const BooksItem = (props) => {
 
   return (
     <div className='book-content'>
-      <img onClick={() => router(`/books/${props.number}`)} src={props.book.book_image} alt={props.book.title} height="330" width="240"/>
+      <img id='book-img' onClick={() => router(`/books/${props.number}`)} src={props.book.book_image} alt={props.book.title} height="330" width="240"/>
     </div>
   )
 }
