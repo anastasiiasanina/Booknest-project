@@ -5,11 +5,12 @@ import BookService from "../../API/BookService";
 import Loader from "../Loader";
 import { Fetching } from "../../helpers/fetch";
 
-const BooksList = ({apiKey, listEntered, setListEntered}) => {
-  const [books, setBooks] = useState([]);
+const BooksList = ({books, setBooks, apiKey, listEntered, setListEntered}) => {
   const [list, setList] = useState('list');
   const [height, setHeight] = useState("65vh");
   const [fetchBooks, loaded, error] = Fetching(async () => {
+    setBooks([]);
+    setHeight("65vh");
     const res = await BookService.getBooks(apiKey, parseInput(listEntered));
     setBooks(res.data.results.books);
     setHeight();
@@ -40,7 +41,7 @@ const BooksList = ({apiKey, listEntered, setListEntered}) => {
       }
       <div className="list">
         {books.map((el, index) => 
-          <BooksItem book={el} number={index++} key={index}/>    
+          <BooksItem book={el} id={index++} key={index}/>    
         )}
       </div>
     </div>

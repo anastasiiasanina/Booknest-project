@@ -3,12 +3,9 @@ import ListService from "../../API/ListService";
 import '../../style/Suggestions.css';
 import Loader from "../Loader";
 import { Fetching } from "../../helpers/fetch";
-import { useNavigate } from "react-router";
 import {Link} from 'react-router-dom';
 
 const Suggestions = ({apiKey, setListEntered}) => {
-  const router = useNavigate();
-
   const [list, setList] = useState([]);
   const [height, setHeight] = useState("65vh");
 
