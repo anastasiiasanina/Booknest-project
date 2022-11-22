@@ -20,12 +20,3 @@
   background-color: #625d3dcd;
   color: white;
 }
-
-.main span {
-  color: #671004;
-  border: 2px solid #671004;
-  background-color: rgba(240, 248, 255, 0.637);
-  font-size: 5.7vw;
-  white-space: nowrap;
-  font-family: Iceland;
-}

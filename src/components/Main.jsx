@@ -15,9 +15,9 @@ const MainComponent = () => {
 
   return (
     <div>
-      <Header/>
+      <Header setListEntered={setListEntered}/>
       <Routes>
-        <Route exact path="/home" element={<HomePage/>}/>
+        <Route exact path="/home" element={<HomePage apiKey={apiKey}/>}/>
         <Route exact path="/books" element={<BooksList books={books} setBooks={setBooks} apiKey={apiKey} listEntered={listEntered} setListEntered={setListEntered}/>}/>
         <Route exact path="/authors" element={<AuthorsList/>}/>
         <Route exact path="/suggestions" element={<Suggestions apiKey={apiKey} setListEntered={setListEntered}/>}/>

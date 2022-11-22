@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import '../../style/HomePage.css';
+import RandomBook from '../RandomBook';
 
-const HomePage = (props) => {
+const HomePage = ({apiKey}) => {
   let [currImg, setImg] = useState(0);
   let srcArray = [
     'assets/images/main-page/background1.jpg',                
@@ -23,12 +24,12 @@ const HomePage = (props) => {
     <div>
       <div style={{backgroundImage: `url(${srcArray[currImg]})`, backgroundSize: '100% 100%'}} className='main'>
         <div className='welcome'>
-          <span>Welcome to the Booknest</span> <br/>
-          <a style={{textDecoration: 'none'}} id='btn' href='#random'><span>Get started</span></a>
+          <span className='main-btn'>Welcome to the Booknest</span> <br/>
+          <a style={{textDecoration: 'none'}} id='btn' href='#random'><span className='main-btn'>Get started</span></a>
         </div>
       </div>
       <div id='random' className='random-book'>
-
+        <RandomBook apiKey={apiKey}/>
       </div>
     </div>
   )

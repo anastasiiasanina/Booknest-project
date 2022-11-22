@@ -10,7 +10,7 @@ const BooksList = ({books, setBooks, apiKey, listEntered, setListEntered}) => {
   const [height, setHeight] = useState("65vh");
   const [fetchBooks, loaded, error] = Fetching(async () => {
     setBooks([]);
-    setHeight("65vh");
+    setHeight("65vh")
     const res = await BookService.getBooks(apiKey, parseInput(listEntered));
     setBooks(res.data.results.books);
     setHeight();
@@ -39,11 +39,13 @@ const BooksList = ({books, setBooks, apiKey, listEntered, setListEntered}) => {
       {!loaded &&
         <div style={{display: "flex", justifyContent: "center", margin: 50}}><Loader/></div> 
       }
-      <div className="list">
-        {books.map((el, index) => 
-          <BooksItem book={el} id={index++} key={index}/>    
-        )}
-      </div>
+      {loaded && 
+        <div className="list">
+          {books.map((el, index) => 
+            <BooksItem book={el} id={index++} key={index}/>    
+          )}
+        </div>
+      }
     </div>
   )
 }

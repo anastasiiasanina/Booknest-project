@@ -16,6 +16,15 @@
   font-size: 2rem;
 }
 
+.main-btn {
+  color: #671004;
+  border: 2px solid #671004;
+  background-color: rgba(240, 248, 255, 0.637);
+  font-size: 6vw;
+  white-space: nowrap;
+  font-family: Iceland;
+}
+
 .list {
   margin-top: 20px;
   display: grid;
