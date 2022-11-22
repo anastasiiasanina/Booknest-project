@@ -28,9 +28,7 @@ const HomePage = ({apiKey}) => {
           <a style={{textDecoration: 'none'}} id='btn' href='#random'><span className='main-btn'>Get started</span></a>
         </div>
       </div>
-      <div id='random' className='random-book'>
-        <RandomBook apiKey={apiKey}/>
-      </div>
+      <RandomBook apiKey={apiKey}/>
     </div>
   )
 }

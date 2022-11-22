@@ -8,6 +8,13 @@
   width: 75%;
 }
 
+.main, .random-book {
+  display: flex;
+  margin: auto;
+  width: 75%;
+  background-color: #3E2313;
+}
+
 .info {
   display: inline-block;
   margin: 10px;
@@ -31,9 +38,17 @@
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+.main {
+  height: 75vh;
+}
+
 @media (min-width: 0px) and (max-width: 1000px) {
   .list {
     grid-template-columns: 1fr;
+  }
+
+  .main {
+    height: 300px;
   }
 }
 

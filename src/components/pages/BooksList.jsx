@@ -10,7 +10,7 @@ const BooksList = ({books, setBooks, apiKey, listEntered, setListEntered}) => {
   const [height, setHeight] = useState("65vh");
   const [fetchBooks, loaded, error] = Fetching(async () => {
     setBooks([]);
-    setHeight("65vh")
+    setHeight("65vh");
     const res = await BookService.getBooks(apiKey, parseInput(listEntered));
     setBooks(res.data.results.books);
     setHeight();
