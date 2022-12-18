@@ -3,14 +3,13 @@ import '../style/Header.css';
 import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem } from 'reactstrap';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const Header = (props) => {
   let [isOpen, setOpen] = useState(false);
+  let [height, setHeight] = useState("15vh");
 
-  const toggleNav = () => {
-    setOpen(!isOpen);
-  }
-
+  useEffect(() => {isOpen ? setHeight("300px") : setHeight("15vh")}, [isOpen])
   return (
     <React.Fragment>
       <div className='super-header'>
@@ -19,10 +18,12 @@ const Header = (props) => {
         </NavbarBrand>
         <h1 className='brand-name'>BOOKNEST</h1>
       </div>
-      <Navbar className='header' dark expand="md">
+      <Navbar style={{height: height}} className='header' dark expand="md">
         <div className="container">
-            <NavbarToggler id='toggler' onClick={toggleNav}></NavbarToggler>
-              <Collapse id='collapse' isOpen={isOpen} navbar>
+            <NavbarToggler id='toggler' onClick={() => {
+              setOpen(!isOpen);
+            }}></NavbarToggler>
+              <Collapse  id='collapse' isOpen={isOpen} navbar>
                 <Nav id='nav' navbar>
                   <NavItem className='text'>
                     <NavLink className="nav-link" to="/home">

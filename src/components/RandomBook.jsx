@@ -7,7 +7,6 @@ import ShowRandom from "./ShowRandom";
 const RandomBook = ({apiKey}) => {
   const [randomList, setRandomList] = useState();
   const [randomBook, setRandomBook] = useState();
-  const [clicked, setClicked] = useState(false);
   const [list, setList] = useState([]);
   const [height, setHeight] = useState("65vh");
 
@@ -18,7 +17,6 @@ const RandomBook = ({apiKey}) => {
   const [fetchList, loadedList, errorList] = Fetching(async () => {
     const res = await ListService.getList(apiKey);
     setList(res.data.results);
-    
   }, "No categories found.");
 
   const [fetchBooks, loadedBook, errorBook] = Fetching(async () => {
@@ -29,7 +27,6 @@ const RandomBook = ({apiKey}) => {
   }, "No category with this name");
 
   const handleClick = () => {
-    setClicked(true);
     let listId = getRandomId(list.length);
     setRandomList(list[listId].list_name_encoded);
   }
@@ -47,7 +44,7 @@ const RandomBook = ({apiKey}) => {
       <div style={{margin: "auto"}}>
         {errorList && <h3 className="info">{errorList}</h3>}
         {errorBook && <h3 className="info">{errorBook}</h3>}
-        <ShowRandom loadedBook={loadedBook} loadedList={loadedList} handleClick={handleClick} clicked={clicked} randomBook={randomBook}/>
+        <ShowRandom loadedBook={loadedBook} loadedList={loadedList} handleClick={handleClick} randomBook={randomBook}/>
       </div>
     </div>
   )

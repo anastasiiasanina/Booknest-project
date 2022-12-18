@@ -1,13 +1,19 @@
 import BooksItem from "../BooksItem";
+import BookDetail from "../BookDetail";
 import '../../style/BooksList.css';
 import { useState, useEffect } from "react";
 import BookService from "../../API/BookService";
 import Loader from "../Loader";
 import { Fetching } from "../../helpers/fetch";
+import Modal from "../Modal";
 
-const BooksList = ({books, setBooks, apiKey, listEntered, setListEntered}) => {
+const BooksList = ({apiKey, listEntered, setListEntered}) => {
   const [list, setList] = useState('list');
   const [height, setHeight] = useState("65vh");
+  const [books, setBooks] = useState([]);
+  const [modal, setModal] = useState(false);
+  const [currBook, setBook] = useState();
+  
   const [fetchBooks, loaded, error] = Fetching(async () => {
     setBooks([]);
     setHeight("65vh");
@@ -42,8 +48,11 @@ const BooksList = ({books, setBooks, apiKey, listEntered, setListEntered}) => {
       {loaded && 
         <div className="list">
           {books.map((el, index) => 
-            <BooksItem book={el} id={index++} key={index}/>    
+            <BooksItem setModal={setModal} setBook={setBook} book={el} id={index++} key={index}/>    
           )}
+          <Modal visible={modal} setVisible={setModal}>
+            <BookDetail currBook={currBook}/>
+          </Modal>
         </div>
       }
     </div>
