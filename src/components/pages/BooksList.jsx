@@ -15,7 +15,6 @@ const BooksList = ({apiKey, listEntered, setListEntered}) => {
   const [currBook, setBook] = useState();
   
   const [fetchBooks, loaded, error] = Fetching(async () => {
-    setBooks([]);
     setHeight("65vh");
     const res = await BookService.getBooks(apiKey, parseInput(listEntered));
     setBooks(res.data.results.books);
@@ -45,7 +44,7 @@ const BooksList = ({apiKey, listEntered, setListEntered}) => {
       {!loaded &&
         <div style={{display: "flex", justifyContent: "center", margin: 50}}><Loader/></div> 
       }
-      {loaded && 
+      {loaded && !error && 
         <div className="list">
           {books.map((el, index) => 
             <BooksItem setModal={setModal} setBook={setBook} book={el} id={index++} key={index}/>    

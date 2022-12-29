@@ -17,7 +17,7 @@ const MainComponent = () => {
       <Routes>
         <Route exact path="/home" element={<HomePage apiKey={apiKey}/>}/>
         <Route exact path="/books" element={<BooksList apiKey={apiKey} listEntered={listEntered} setListEntered={setListEntered}/>}/>
-        <Route exact path="/authors" element={<AuthorsList/>}/>
+        <Route exact path="/authors" element={<AuthorsList apiKey={apiKey}/>}/>
         <Route exact path="/suggestions" element={<Suggestions apiKey={apiKey} setListEntered={setListEntered}/>}/>
         <Route path="*" element={<Navigate replace to="/home"/>}/>
       </Routes>
