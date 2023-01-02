@@ -27,6 +27,3 @@ const MainComponent = () => {
 }
 
 export default MainComponent;
-
-//smart search
-//authors

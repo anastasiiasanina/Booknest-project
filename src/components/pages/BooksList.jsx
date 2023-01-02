@@ -3,9 +3,12 @@ import BookDetail from "../BookDetail";
 import '../../style/BooksList.css';
 import { useState, useEffect } from "react";
 import BookService from "../../API/BookService";
+import ListService from "../../API/ListService";
 import Loader from "../Loader";
 import { Fetching } from "../../helpers/fetch";
 import Modal from "../Modal";
+import { Autocomplete } from "@mui/material";
+import TextField from "@mui/material/TextField";
 
 const BooksList = ({apiKey, listEntered, setListEntered}) => {
   const [list, setList] = useState('list');
@@ -13,6 +16,16 @@ const BooksList = ({apiKey, listEntered, setListEntered}) => {
   const [books, setBooks] = useState([]);
   const [modal, setModal] = useState(false);
   const [currBook, setBook] = useState();
+  const [category, setCategory] = useState([]);
+
+  const [fetchList, listLoaded, listError] = Fetching(async () => {
+    const res = await ListService.getList(apiKey);
+    setCategory(res.data.results);
+  }, "No categories found.");
+
+  useEffect(() => {
+    fetchList();
+  }, []);
   
   const [fetchBooks, loaded, error] = Fetching(async () => {
     setHeight("65vh");
@@ -34,7 +47,14 @@ const BooksList = ({apiKey, listEntered, setListEntered}) => {
       <h3 className="info">Find your preferable category.</h3> <br/>
       <h3 className="info">In section Suggestions you may find the list.</h3>
       <div id="search">
-        <input id="list-input"  type="text" placeholder="Enter category" onChange={(e) => setList(e.target.value)}/>
+        <Autocomplete 
+          sx={{ backgroundColor: "white", width: "70%", margin: "auto" }}
+          options={category.map(el => el.list_name)}
+          renderInput={(params) => <TextField {...params} label="Category" />}
+          onInputChange={(event, newInputValue) => {
+            setList(newInputValue);
+          }}
+        />
         <button id="search-btn" onClick={() => {
           setListEntered(list);
         }}>Search</button>
