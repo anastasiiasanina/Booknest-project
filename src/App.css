@@ -42,7 +42,7 @@
   height: 75vh;
 }
 
-@media (min-width: 0px) and (max-width: 1000px) {
+@media (min-width: 0px) and (max-width: 767px){
   .list {
     grid-template-columns: 1fr;
   }
@@ -50,17 +50,39 @@
   .main {
     height: 300px;
   }
-}
 
-@media (min-width: 0px) and (max-width: 500px) {
   .book-img {
-    width: 75%;
+    width: 65%;
     height: 90%;
+  }
+
+  #nav {
+    font-size: 5vw;
   }
 }
 
-@media (min-width: 1001px) and (max-width: 1270px) {
+@media (min-width: 500px) and (max-width: 767px) {
+  #nav {
+    font-size: 3.3vw;
+  }
+}
+
+@media (min-width: 768px) {
   .list {
     grid-template-columns: 1fr 1fr;
+  }
+
+  #nav {
+    font-size: 3vw;
+  }
+}
+
+@media (min-width: 1280px) {
+  .list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  #nav {
+    font-size: 2.3vw;
   }
 }

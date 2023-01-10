@@ -2,12 +2,25 @@ import { useState, useEffect } from "react";
 import Loader from "../Loader";
 import { Fetching } from "../../helpers/fetch";
 import BookService from "../../API/BookService";
+import ListService from "../../API/ListService";
+import { Autocomplete } from "@mui/material";
+import TextField from "@mui/material/TextField";
 
 const AuthorsList = ({apiKey}) => {
   const [list, setList] = useState('list');
   const [listEntered, setListEntered] = useState('Hardcover fiction');
   const [height, setHeight] = useState("65vh");
   const [books, setBooks] = useState([]);
+  const [category, setCategory] = useState([]);
+
+  const [fetchList, listLoaded, listError] = Fetching(async () => {
+    const res = await ListService.getList(apiKey);
+    setCategory(res.data.results);
+  }, "No categories found.");
+
+  useEffect(() => {
+    fetchList();
+  }, []);
 
   const [fetchBooks, loaded, error] = Fetching(async () => {
     setHeight("65vh");
@@ -28,7 +41,14 @@ const AuthorsList = ({apiKey}) => {
     <div style={{height: height}} className="main-block">
       <h3 className="info">Find your preferable category.</h3> <br/>
       <div id="search">
-        <input id="list-input"  type="text" placeholder="Enter category" onChange={(e) => setList(e.target.value)}/>
+        <Autocomplete 
+          sx={{ backgroundColor: "white", width: "70%", margin: "auto" }}
+          options={category.map(el => el.list_name)}
+          renderInput={(params) => <TextField {...params} label="Category" />}
+          onInputChange={(event, newInputValue) => {
+            setList(newInputValue);
+          }}
+        />        
         <button id="search-btn" onClick={() => {
           setListEntered(list);
         }}>Search</button>
